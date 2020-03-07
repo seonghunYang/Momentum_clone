@@ -8,7 +8,9 @@ const USER_LS = "currentUser",
 function paintName(text) {
   form.classList.remove(SHOWING_CN);
   gretting.classList.add(SHOWING_CN);
-  gretting.innerText = `Hello ${text}`;
+  const date = new Date();
+  const hour = date.getHours();
+  gretting.innerText = `${hour > 12 ? `Good afternoon ${text}` : `Good morning ${text}`}`;
 }
 
 function handleSubmit() {
